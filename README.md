@@ -47,6 +47,10 @@ Overall incorrect: 3771 (0.067)
 Unknown correct: 3805 (0.736)
 Unknown incorrect: 1365 (0.264)
 $ python3 dev.py -f dev.tagged -tu -memm -fe 30 -min 2 -low -e 10
+Overall correct: 115464 (0.957)
+Overall incorrect: 5139 (0.043)
+Unknown correct: 5333 (0.539)
+Unknown incorrect: 4560 (0.461)
 $ python3 dev.py -f train.tagged -tr -memm -s
 $ python3 dev.py -f test.tagged -te -memm -m memm-model.txt 
 ```
