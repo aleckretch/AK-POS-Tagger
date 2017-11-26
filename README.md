@@ -13,7 +13,7 @@ The MM takes in an array of tokens and returns an array of associated POS tags. 
 m1 = MM.mm()
 tokens = ["I", "enjoy", "eating", "sweet", "apples", "dipped", "in", "warm", "honey", "."]
 tags = m1.get_pos_tags(tokens)
-# tags = ["PRP", "VBP", "VBG", "JJ", "NNS", "VBD", "IN", "JJ", "NN", "."]
+# tags: ["PRP", "VBP", "VBG", "JJ", "NNS", "VBD", "IN", "JJ", "NN", "."]
 ```
 
 The default data file used is *memm-model.txt*, but an alternative data file can be selected by including the *model_path* parameter, like such:
