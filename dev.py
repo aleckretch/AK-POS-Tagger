@@ -32,13 +32,13 @@ def parse_args():
 					data.seek(0)
 					test_accuracy_mm(m1, data, to_lowercase=m1.DEFAULT_TO_LOWERCASE)
 			elif args.memm:
-				m2 = memm.MEMM(model_path=args.model)
+				m2 = memm.MEMM(model_path=None)
 				with open(args.file) as data:
 					m2.set_model(data)
 					if args.save:
 						m2.save_model("m2-data.txt")
 					data.seek(0)
-					test_accuracy_mm(m1, data, to_lowercase=m2.DEFAULT_TO_LOWERCASE)
+					test_accuracy_memm(m2, data, to_lowercase=m2.DEFAULT_TO_LOWERCASE)
 		elif args.train is False and args.test and args.tune is False: # test the input
 			if args.model:
 				if args.mm:
@@ -86,7 +86,7 @@ def parse_args():
 							minimum_for_feature = args.features
 						m2.set_model(data, minimum_for_token=minimum, minimum_for_feature=minimum_for_feature, to_lowercase=to_lowercase, max_epochs=max_epochs)
 						data.seek(0)
-						test_accuracy_mm(m1, data, to_lowercase=m2.DEFAULT_TO_LOWERCASE)
+						test_accuracy_memm(m2, data, to_lowercase=m2.DEFAULT_TO_LOWERCASE)
 		else:
 			print("you must select only one argument -tr, -te, or -tu (see --help for help)")
 	else:

@@ -296,8 +296,8 @@ class MEMM:
 		current_best_unknown_tag_vectors = {}
 		for tag in self.unknown_token_and_tag_vectors:
 			for vector in self.unknown_token_and_tag_vectors[tag]["vectors"]:
-				self.unknown_tag_vectors.append({"tag": tag, "vector": vector})
-			self.current_best_unknown_tag_vectors[tag] = {"best": self.unknown_token_and_tag_vectors[tag]["best"], "bias": self.unknown_token_and_tag_vectors[tag]["bias"]}
+				unknown_tag_vectors.append({"tag": tag, "vector": vector})
+			current_best_unknown_tag_vectors[tag] = {"best": self.unknown_token_and_tag_vectors[tag]["best"], "bias": self.unknown_token_and_tag_vectors[tag]["bias"]}
 		updated_best_unknown_tag_vectors = self.perceptron_best_vectors(unknown_tag_vectors, current_best_unknown_tag_vectors, max_epochs)
 		for tag in self.unknown_token_and_tag_vectors:
 			self.unknown_token_and_tag_vectors[tag]["best"] = updated_best_unknown_tag_vectors[tag]["best"]
