@@ -41,7 +41,7 @@ Overall correct: 181552 (0.946)
 Overall incorrect: 10417 (0.054)
 Unknown correct: 6096 (0.659)
 Unknown incorrect: 3161 (0.341)
-$ python3 dev.py -f test.tagged -te -mm -m mm-model.txt 
+$ python3 dev.py -f test.tagged -te -mm -m mm-model.txt
 Overall correct: 52829 (0.933)
 Overall incorrect: 3771 (0.067)
 Unknown correct: 3805 (0.736)
@@ -52,5 +52,13 @@ Overall incorrect: 5139 (0.043)
 Unknown correct: 5333 (0.539)
 Unknown incorrect: 4560 (0.461)
 $ python3 dev.py -f train.tagged -tr -memm -s
-$ python3 dev.py -f test.tagged -te -memm -m memm-model.txt 
+Overall correct: 186376 (0.971)
+Overall incorrect: 5593 (0.029)
+Unknown correct: 8518 (0.642)
+Unknown incorrect: 4740 (0.358)
+$ python3 dev.py -f test.tagged -te -memm -m memm-model.txt
+Overall correct: 50836 (0.898)
+Overall incorrect: 5764 (0.102)
+Unknown correct: 2919 (0.504)
+Unknown incorrect: 2868 (0.496)
 ```
