@@ -5,7 +5,7 @@ A Part-of-Speech (POS) tagger built using a visible Markov Model (MM) and a Maxi
 
 The MM considers the probability of known tokens to occur as any POS tag multiplied by the probability of any POS tag following the previously predicted POS tag. Unknown tokens consider the tag-to-tag probability multiplied by the unknown token entity probability to occur as any POS tag. Unknown tokens additionally consider the probability of tokens including certain lexical features to occur as any POS tag, including inclusion of a common suffix, hyphen, or first-character capital. The probability data is according to a pre-trained data file.
 
-To use import the source file into your code: `import mm`
+To use, import the source file into your code: `import mm`
 
 The MM takes in an array of tokens and returns an array of associated POS tags. Here is a sample use case:
 
