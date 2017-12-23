@@ -3,7 +3,7 @@ A Part-of-Speech (POS) tagger built using a visible Markov Model (MM) and a Maxi
 
 # Usage
 
-The MM considers the probability of known tokens to occur as any POS tag multiplied by the probability of any POS tag following the previously predicted POS tag. Unknown tokens consider the tag-to-tag probability multiplied by the unknown token entity probability to occur as any POS tag. Unknown tokens additionally consider the probability of tokens including certain lexical features to occur as any POS tag, including inclusion of a common suffix, hyphen, or first-character capital. The probability data is according to a pre-trained data file.
+The MM considers the probability of known tokens to occur as any POS tag multiplied by the probability of any POS tag following the previously predicted POS tag. Unknown tokens consider the tag-to-tag probability multiplied by the unknown token entity probability to occur as any POS tag. Unknown tokens additionally consider the probability of tokens including certain lexical features to occur as any POS tag, including inclusion of a common suffix, hyphen, or first-character capital. Known bigrams and POS tags, tag trigrams, and two lookahead tokens are also considered by the model. The probability data is according to a pre-trained data file.
 
 To use, import the source file into your code: `import mm`
 
@@ -32,20 +32,20 @@ The MM and MEMM can be trained, tuned, and tested against different data sets to
 
 ```
 $ python3 dev.py -f dev.tagged -tu -mm -min 2
-Overall correct: 113976 (0.945)
-Overall incorrect: 6627 (0.055)
-Unknown correct: 4389 (0.637)
-Unknown incorrect: 2504 (0.363)
+Overall correct: 117291 (0.973)
+Overall incorrect: 3312 (0.027)
+Unknown correct: 5346 (0.776)
+Unknown incorrect: 1547 (0.224)
 $ python3 dev.py -f train.tagged -tr -mm
-Overall correct: 181552 (0.946)
-Overall incorrect: 10417 (0.054)
-Unknown correct: 6096 (0.659)
-Unknown incorrect: 3161 (0.341)
+Overall correct: 1089984 (0.976)
+Overall incorrect: 26584 (0.024)
+Unknown correct: 17497 (0.789)
+Unknown incorrect: 4693 (0.211)
 $ python3 dev.py -f test.tagged -te -mm -m mm-model.txt
-Overall correct: 52829 (0.933)
-Overall incorrect: 3771 (0.067)
-Unknown correct: 3805 (0.736)
-Unknown incorrect: 1365 (0.264)
+Overall correct: 54795 (0.968)
+Overall incorrect: 1805 (0.032)
+Unknown correct: 1520 (0.797)
+Unknown incorrect: 387 (0.203)
 $ python3 dev.py -f dev.tagged -tu -memm -fe 30 -min 2 -low -e 10
 Overall correct: 115464 (0.957)
 Overall incorrect: 5139 (0.043)
